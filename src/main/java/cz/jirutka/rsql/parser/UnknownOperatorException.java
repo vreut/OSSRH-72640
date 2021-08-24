@@ -23,10 +23,12 @@
  */
 package cz.jirutka.rsql.parser;
 
+import java.text.MessageFormat;
+
 /**
  * This exception is thrown when unknown/unsupported comparison operator is parsed.
  */
-public class UnknownOperatorException extends ParseException {
+public class UnknownOperatorException extends RuntimeException {
 
     private final String operator;
 
@@ -36,7 +38,7 @@ public class UnknownOperatorException extends ParseException {
     }
 
     public UnknownOperatorException(String operator, String message) {
-        super(message);
+        super(MessageFormat.format("{0},{1}", operator, message));
         this.operator = operator;
     }
 

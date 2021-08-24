@@ -31,25 +31,31 @@ import static java.util.Arrays.asList;
 public abstract class RSQLOperators {
 
     public static final ComparisonOperator
-            EQUAL = new ComparisonOperator("=="),
-            NOT_EQUAL = new ComparisonOperator("!="),
-            GREATER_THAN = new ComparisonOperator("=gt=", ">"),
-            GREATER_THAN_OR_EQUAL = new ComparisonOperator("=ge=", ">="),
-            LESS_THAN = new ComparisonOperator("=lt=", "<"),
-            LESS_THAN_OR_EQUAL = new ComparisonOperator("=le=", "<="),
-            IN = new ComparisonOperator("=in=", true),
-            NOT_IN = new ComparisonOperator("=out=", true);
+        EQUAL = new ComparisonOperator("=="),
+        NOT_EQUAL = new ComparisonOperator("!="),
+        GREATER_THAN = new ComparisonOperator("=gt=", ">"),
+        GREATER_THAN_OR_EQUAL = new ComparisonOperator("=ge=", ">="),
+        LESS_THAN = new ComparisonOperator("=lt=", "<"),
+        LESS_THAN_OR_EQUAL = new ComparisonOperator("=le=", "<="),
+        IN = new ComparisonOperator("=in=", true),
+        NOT_IN = new ComparisonOperator("=out=", true),
+        RANGE = new ComparisonOperator("=range=", "=RANGE=", true),
+        STARTS = new ComparisonOperator("=starts=", "=STARTS=", false),
+        ENDS = new ComparisonOperator("=ends=", "=ENDS=", false),
+        CONTAINS = new ComparisonOperator("=contains=", "=CONTAINS=", false);
 
     public static final UnaryComparisonOperator
         IS_NULL = new UnaryComparisonOperator("=isnull="),
-        NOT_NULL = new UnaryComparisonOperator("=notnull=");
+        NOT_NULL = new UnaryComparisonOperator("=notnull="),
+        CONTAINS_FALSE = new UnaryComparisonOperator("=false="),
+        CONTAINS_TRUE = new UnaryComparisonOperator("=true=");
 
     public static Set<ComparisonOperator> defaultComparisonOperators() {
         return new HashSet<>(asList(EQUAL, NOT_EQUAL, GREATER_THAN, GREATER_THAN_OR_EQUAL,
-                                    LESS_THAN, LESS_THAN_OR_EQUAL, IN, NOT_IN));
+            LESS_THAN, LESS_THAN_OR_EQUAL, IN, NOT_IN, RANGE, STARTS, ENDS, CONTAINS));
     }
 
-    public static Set<UnaryComparisonOperator> defaultUnaryOperator(){
-        return new HashSet<>(asList(IS_NULL, NOT_NULL));
+    public static Set<UnaryComparisonOperator> defaultUnaryOperator() {
+        return new HashSet<>(asList(IS_NULL, NOT_NULL, CONTAINS_FALSE, CONTAINS_TRUE));
     }
 }
