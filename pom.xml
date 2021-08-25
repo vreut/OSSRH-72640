@@ -13,7 +13,7 @@
 
     <!--//////////////////// ABOUT ////////////////////-->
 
-    <groupId>cz.jirutka.rsql</groupId>
+    <groupId>com.rsql</groupId>
     <artifactId>rsql-parser</artifactId>
     <version>2.2.1-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -59,7 +59,6 @@
 
 
     <!--//////////////////// DEPENDENCIES ////////////////////-->
-
     <dependencies>
         <!-- Not needed in runtime -->
         <dependency>
@@ -116,24 +115,22 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+
         </plugins>
 
         <pluginManagement>
             <plugins>
                 <!-- Generated sources must be excluded from analysis,
                      otherwise Coveralls fails. -->
-                <plugin>
-                    <groupId>org.jacoco</groupId>
-                    <artifactId>jacoco-maven-plugin</artifactId>
-                    <configuration>
-                        <excludes>
-                            <exclude>**/Parse*.*</exclude>
-                            <exclude>**/SimpleCharStream.*</exclude>
-                            <exclude>**/Token.*</exclude>
-                            <exclude>**/TokenMgrError.*</exclude>
-                        </excludes>
-                    </configuration>
-                </plugin>
+
             </plugins>
         </pluginManagement>
     </build>

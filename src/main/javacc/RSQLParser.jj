@@ -36,9 +36,9 @@ options {
 
 PARSER_BEGIN(Parser)
 
-package cz.jirutka.rsql.parser;
+package com.rsql.parser;
 
-import cz.jirutka.rsql.parser.ast.*;
+import com.rsql.parser.ast.*;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
