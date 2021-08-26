@@ -36,9 +36,9 @@ options {
 
 PARSER_BEGIN(Parser)
 
-package com.rsql.parser;
+package io.github.vreut.parser;
 
-import com.rsql.parser.ast.*;
+import io.github.vreut.parser.ast.*;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
