@@ -16,7 +16,9 @@ public enum Comparison {
     RANGE(new ComparisonOperator("=range=", "=RANGE=", true)),
     STARTS(new ComparisonOperator("=starts=", "=STARTS=", false)),
     ENDS(new ComparisonOperator("=ends=", "=ENDS=", false)),
-    CONTAINS(new ComparisonOperator("=contains=", "=CONTAINS=", false));
+    CONTAINS(new ComparisonOperator("=contains=", "=CONTAINS=", false)),
+    NOT_CONTAINS(new ComparisonOperator("=notcontains=", "=notcontains=", false));
+
 
     private final ComparisonOperator operator;
 

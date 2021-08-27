@@ -8,8 +8,7 @@ public enum Unary {
     IS_NULL(new UnaryComparisonOperator("=isnull=")),
     NOT_NULL(new UnaryComparisonOperator("=notnull=")),
     CONTAINS_FALSE(new UnaryComparisonOperator("=false=")),
-    CONTAINS_TRUE(new UnaryComparisonOperator("=true=")),
-    NOT_CONTAINS(new UnaryComparisonOperator("=notcontains="));
+    CONTAINS_TRUE(new UnaryComparisonOperator("=true="));
 
     private final UnaryComparisonOperator operator;
 
